@@ -79,3 +79,8 @@ Use vendor security advisories and inspect the actual deployed web runtime to ma
 ## License
 
 Licensed under the Apache License 2.0. See [LICENSE](LICENSE).
+
+
+## Evidence records
+
+The [evidence index](evidence/README.md) describes the captured transcripts, raw response headers, and response bodies in the [evidence folder](evidence/). The records come from the localhost-only Docker lab and show version fingerprinting behavior only. They do not demonstrate exploitation, RCE, or prove production patch status.
