@@ -1,9 +1,13 @@
-I built a small PHP2Shell **testing POC, not an exploit**. It sends a normal HTTP GET, reads an explicitly disclosed PHP version, and compares it with the upstream fix threshold. It does not attempt code execution or test exploitability.
+🧪 PHP2Shell: a version check is a clue, not a verdict.
 
-I exercised it in an isolated Docker lab using PHP 8.5.11 and 8.5.12. The demo endpoint deliberately reveals its version; the checker changes from an affected-version fingerprint to a version at the upstream fix threshold. The lab binds to localhost and is stopped after each run.
+A hosted checker is convenient: enter a URL and get a result. I prefer an approach you can inspect, clone, and run yourself. The included Docker lab reproduces the check locally, so you can see the code and its behavior without probing a live site.
 
-This demonstrates version classification only. Hidden headers, vendor backports, proxies, or a different production runtime can invalidate the inference. A green result does not prove a site is safe, and a red result does not prove RCE. Verify the actual web runtime and vendor advisory.
+This open-source project is a testing POC, not an exploit. It makes a normal HTTP GET, reads an explicitly disclosed PHP version, and compares it with the upstream fixed-version threshold. In the lab, PHP 8.5.11 is below the threshold; PHP 8.5.12 is at it.
 
-Reproduction steps, source, evidence, and iTerm screenshots: see this repository's README.
+This demonstrates version fingerprinting only. It does not attempt RCE or prove exploitability or production patch status. Proxies, vendor backports, and runtime differences can affect the result. The checker sends no exploit or memory-exhaustion payloads.
 
-#PHP #CyberSecurity #AppSec #Docker
+The repo includes the source, Docker reproduction steps, iTerm screenshots, transcripts, and limitations. Fork it and reproduce the lab locally. Only assess remote systems you own or are authorized to test.
+
+https://github.com/vartaktushar/php2shell-checker-poc
+
+#PHP #CyberSecurity #AppSec #OpenSource #Docker
