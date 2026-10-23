@@ -1,0 +1,7 @@
+services:
+  php-lab:
+    image: php:${PHP_TAG:-8.5.11}-apache
+    ports:
+      - "127.0.0.1:18080:80"
+    volumes:
+      - ./www:/var/www/html:ro
