@@ -31,7 +31,7 @@ The HTTP probe is read-only and does not submit multipart forms, upload files, e
 The local lab deliberately exposes its PHP version so the check has deterministic input. It binds only to `127.0.0.1:18080` and serves a static PHP page that does not process uploads or execute commands.
 
 ```sh
-./lab/run_poc.sh
+bash lab/run_poc.sh
 ```
 
 The script runs two sequential phases using official PHP Apache images:
