@@ -1,0 +1,3 @@
+PHP2Shell checker lab
+PHP version: 8.5.11
+This endpoint does not process uploads or execute commands.
